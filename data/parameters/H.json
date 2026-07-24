@@ -1,0 +1,7 @@
+{
+    "id": "H",
+    "name": "H parameter",
+    "description": "Depends on routine",
+    "type": "float",
+    "unit": "mm"
+}
