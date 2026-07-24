@@ -1,0 +1,218 @@
+{
+    "id": "P9834",
+    "name": "Feature to feature",
+    "description": "Measurement between features.",
+
+    "requirements": [
+        {
+            "rule": "one_of",
+            "options": [
+                {
+                    "parameters": [
+                        "Z"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "E"
+                        },
+                        {
+                            "parameter": "F"
+                        },
+                        {
+                            "parameter": "H"
+                        },
+                        {
+                            "parameter": "M"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "T"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "V"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "A",
+                        "Z"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "B"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "D",
+                        "Z"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "B"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "X"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "E"
+                        },
+                        {
+                            "parameter": "F"
+                        },
+                        {
+                            "parameter": "H"
+                        },
+                        {
+                            "parameter": "M"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "T"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "V"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "Y"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "E"
+                        },
+                        {
+                            "parameter": "F"
+                        },
+                        {
+                            "parameter": "H"
+                        },
+                        {
+                            "parameter": "M"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "T"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "V"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "X",
+                        "Y"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "B"
+                        },
+                        {
+                            "parameter": "E"
+                        },
+                        {
+                            "parameter": "H"
+                        },
+                        {
+                            "parameter": "M"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "A",
+                        "D"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "B"
+                        },
+                        {
+                            "parameter": "E"
+                        },
+                        {
+                            "parameter": "H"
+                        },
+                        {
+                            "parameter": "M"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "W"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": []
+                }
+            ]
+        }
+    ]
+}

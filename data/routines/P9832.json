@@ -1,0 +1,16 @@
+{
+    "id": "P9832",
+    "name": "Probe Start",
+    "description": "Switch the probe on and configure the operational mode.",
+
+    "requirements": [],
+
+    "optional_parameters": [
+        {
+            "parameter": "D"
+        },
+        {
+            "parameter": "W"
+        }
+    ]
+}

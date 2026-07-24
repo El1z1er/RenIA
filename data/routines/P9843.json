@@ -1,0 +1,62 @@
+{
+    "id": "P9843",
+    "name": "Angle Measurement",
+    "description": "Measure an angled surface in the X or Y plane.",
+
+    "requirements": [
+        {
+            "rule": "one_of",
+            "options": [
+                {
+                    "parameters": [
+                        "X",
+                        "D"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "A"
+                        },
+                        {
+                            "parameter": "B"
+                        },
+                        {
+                            "parameter": "Q"
+                        },
+                        {
+                            "parameter": "W"
+                        },
+                        {
+                            "parameter": "Z"
+                        }
+                    ]
+                },
+
+                {
+                    "parameters": [
+                        "Y",
+                        "D"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "A"
+                        },
+                        {
+                            "parameter": "B"
+                        },
+                        {
+                            "parameter": "Q"
+                        },
+                        {
+                            "parameter": "W"
+                        },
+                        {
+                            "parameter": "Z"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "id": "P9833",
+    "name": "Probe Stop",
+    "description": "Switch the probe off and optionally close the print port.",
+
+    "requirements": [],
+
+    "optional_parameters": [
+        {
+            "parameter": "W"
+        }
+    ]
+}

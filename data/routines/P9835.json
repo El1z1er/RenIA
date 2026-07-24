@@ -1,0 +1,30 @@
+{
+    "id": "P9835",
+    "name": "SPC",
+    "description": "Statistical Process Control.",
+
+    "requirements": [
+        {
+            "rule": "all",
+            "parameters": [
+                "T",
+                "M"
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "V"
+        },
+        {
+            "parameter": "C"
+        },
+        {
+            "parameter": "F"
+        },
+        {
+            "parameter": "Z"
+        }
+    ]
+}

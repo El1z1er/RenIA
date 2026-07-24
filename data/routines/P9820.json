@@ -1,0 +1,81 @@
+{
+    "id": "P9820",
+    "name": "...",
+
+    "requirements": [
+        {
+            "rule": "one_of",
+            "options": [
+                {
+                    "parameters": [
+                        "X"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "J"
+                        },
+                        {
+                            "parameter": "K"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "Q"
+                        }
+                    ]
+                },
+                {
+                    "parameters": [
+                        "Y"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "I"
+                        },
+                        {
+                            "parameter": "K"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "Q"
+                        }
+                    ]
+                },
+                {
+                    "parameters": [
+                        "Z"
+                    ],
+
+                    "optional_parameters": [
+                        {
+                            "parameter": "I"
+                        },
+                        {
+                            "parameter": "J"
+                        },
+                        {
+                            "parameter": "S"
+                        },
+                        {
+                            "parameter": "U"
+                        },
+                        {
+                            "parameter": "Q"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
