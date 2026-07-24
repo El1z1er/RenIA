@@ -1,0 +1,61 @@
+{
+    "id": "P9812",
+    "name": "Web or Pocket",
+    "description": "Web or pocket measurement.",
+
+    "requirements": [
+        {
+            "rule": "one_of",
+            "options": [
+                {
+                    "parameters": ["X"]
+                },
+                {
+                    "parameters": ["Y"]
+                },
+                {
+                    "parameters": ["X", "Z"]
+                },
+                {
+                    "parameters": ["Y", "Z"]
+                }
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "E"
+        },
+        {
+            "parameter": "F"
+        },
+        {
+            "parameter": "H"
+        },
+        {
+            "parameter": "M"
+        },
+        {
+            "parameter": "Q"
+        },
+        {
+            "parameter": "R"
+        },
+        {
+            "parameter": "S"
+        },
+        {
+            "parameter": "T"
+        },
+        {
+            "parameter": "U"
+        },
+        {
+            "parameter": "V"
+        },
+        {
+            "parameter": "W"
+        }
+    ]
+}

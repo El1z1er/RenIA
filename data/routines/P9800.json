@@ -1,0 +1,51 @@
+{
+    "id": "P9800",
+    "name": "Supa Touch",
+    "description": "Probe trigger optimisation",
+
+    "requirements": [
+        {
+            "rule": "required",
+            "parameters": [
+                {
+                    "parameter": "B"
+                }
+            ]
+        },
+        {
+            "rule": "one_of",
+            "parameters": [
+                {
+                    "parameter": "X"
+                },
+                {
+                    "parameter": "Y"
+                }
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "H"
+        },
+        {
+            "parameter": "F"
+        },
+        {
+            "parameter": "U"
+        },
+        {
+            "parameter": "W"
+        },
+        {
+            "parameter": "Q"
+        },
+        {
+            "parameter": "R"
+        },
+        {
+            "parameter": "Z"
+        }
+    ]
+}

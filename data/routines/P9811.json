@@ -1,0 +1,55 @@
+{
+    "id": "P9811",
+    "name": "Single Surface",
+    "description": "Measure single surface.",
+
+    "requirements": [
+        {
+            "rule": "one_of",
+            "parameters": [
+                {
+                    "parameter": "X"
+                },
+                {
+                    "parameter": "Y"
+                },
+                {
+                    "parameter": "Z"
+                }
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "E"
+        },
+        {
+            "parameter": "F"
+        },
+        {
+            "parameter": "H"
+        },
+        {
+            "parameter": "M"
+        },
+        {
+            "parameter": "Q"
+        },
+        {
+            "parameter": "S"
+        },
+        {
+            "parameter": "T"
+        },
+        {
+            "parameter": "U"
+        },
+        {
+            "parameter": "V"
+        },
+        {
+            "parameter": "W"
+        }
+    ]
+}

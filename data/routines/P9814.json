@@ -1,0 +1,55 @@
+{
+    "id": "P9814",
+    "name": "Bore or boss",
+    "description": "Bore or boss measurement.",
+
+    "requirements": [
+        {
+            "rule": "one_of",
+            "options": [
+                {
+                    "parameters": ["D"]
+                },
+                {
+                    "parameters": ["D", "Z"]
+                }
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "E"
+        },
+        {
+            "parameter": "F"
+        },
+        {
+            "parameter": "H"
+        },
+        {
+            "parameter": "M"
+        },
+        {
+            "parameter": "Q"
+        },
+        {
+            "parameter": "R"
+        },
+        {
+            "parameter": "S"
+        },
+        {
+            "parameter": "T"
+        },
+        {
+            "parameter": "U"
+        },
+        {
+            "parameter": "V"
+        },
+        {
+            "parameter": "W"
+        }
+    ]
+}

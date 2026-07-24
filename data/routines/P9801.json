@@ -1,0 +1,93 @@
+{
+    "id": "P9801",
+    "name": "Calibration Probe",
+    "description": "Probe calibration routines.",
+
+    "variants": [
+        {
+            "id": "K1",
+            "default": true,
+            "description": "Calibrating the probe length.",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "B",
+                        "Z",
+                        "T"
+                    ]
+                }
+            ],
+
+            "optional_parameters": []
+        },
+
+        {
+            "id": "K4",
+            "default": false,
+            "description": "Calibrating the stylus ball offsets and radii.",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "B",
+                        "D"
+                    ]
+                }
+            ],
+
+            "optional_parameters": [
+                {
+                    "parameter": "M",
+                    "allowed_values": [
+                        180
+                    ]
+                },
+                {
+                    "parameter": "S"
+                },
+                {
+                    "parameter": "Z"
+                }
+            ]
+        },
+
+        {
+            "id": "K5",
+            "default": false,
+            "description": "Calibrating on a reference sphere.",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "B",
+                        "D",
+                        "Z",
+                        "T"
+                    ]
+                }
+            ],
+
+            "optional_parameters": [
+                {
+                    "parameter": "M",
+                    "allowed_values": [
+                        180
+                    ]
+                },
+                {
+                    "parameter": "E"
+                },
+                {
+                    "parameter": "X"
+                },
+                {
+                    "parameter": "Y"
+                }
+            ]
+        }
+    ]
+}

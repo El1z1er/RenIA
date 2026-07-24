@@ -1,0 +1,37 @@
+{
+    "id": "P9810",
+    "name": "Protected Positioning",
+    "description": "Probe trigger monitoring",
+
+    "requirements": [
+        {
+            "rule": "all",
+            "parameters": [
+                {
+                    "parameter": "X"
+                },
+                {
+                    "parameter": "Y"
+                },
+                {
+                    "parameter": "Z"
+                }
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "F"
+        },
+        {
+            "parameter": "M"
+        },
+        {
+            "parameter": "C",
+            "allowed_values": [
+                1
+            ]
+        }
+    ]
+}
