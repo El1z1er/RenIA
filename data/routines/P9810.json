@@ -7,15 +7,9 @@
         {
             "rule": "all",
             "parameters": [
-                {
-                    "parameter": "X"
-                },
-                {
-                    "parameter": "Y"
-                },
-                {
-                    "parameter": "Z"
-                }
+                "X",
+                "Y",
+                "Z"
             ]
         }
     ],

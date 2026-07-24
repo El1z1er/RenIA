@@ -1,0 +1,43 @@
+{
+    "id": "P9819",
+    "name": "Bore or boss PCD",
+    "description": "Bore or boss PCD measurement.",
+    
+    "requirements": [
+        {
+            "rule": "one_of",
+            "options": [
+                {
+                    "parameters": ["C", "D", "Z"]
+                },
+                {
+                    "parameters": ["C","D", "K"]
+                }
+            ]
+        }
+    ],
+
+    "optional_parameters": [
+        {
+            "parameter": "A"
+        },
+        {
+            "parameter": "B"
+        },
+        {
+            "parameter": "H"
+        },
+        {
+            "parameter": "M"
+        },
+        {
+            "parameter": "Q"
+        },
+        {
+            "parameter": "R"
+        },
+        {
+            "parameter": "W"
+        }        
+    ]
+}

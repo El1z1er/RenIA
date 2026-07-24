@@ -7,20 +7,14 @@
         {
             "rule": "required",
             "parameters": [
-                {
-                    "parameter": "B"
-                }
+                "B"
             ]
         },
         {
             "rule": "one_of",
             "parameters": [
-                {
-                    "parameter": "X"
-                },
-                {
-                    "parameter": "Y"
-                }
+                "X",
+                "Y"
             ]
         }
     ],

@@ -1,17 +1,16 @@
 {
-    "id": "P9811",
-    "name": "Single Surface",
-    "description": "Measure single surface.",
+    "id": "P9821",
+    "name": "Angle surface",
+    "description": "Angled surface measurement.",
 
     "requirements": [
         {
-            "rule": "one_of",
+            "rule": "all",            
             "parameters": [
-                "X",
-                "Y",
-                "Z"
+                "A",
+                "D"                
             ]
-        }
+        }                
     ],
 
     "optional_parameters": [

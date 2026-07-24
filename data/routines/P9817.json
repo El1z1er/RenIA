@@ -1,25 +1,25 @@
 {
-    "id": "P9811",
-    "name": "Single Surface",
-    "description": "Measure single surface.",
+    "id": "P9817",
+    "name": "External rectangle",
+    "description": "Finding an external rectangle.",
 
     "requirements": [
         {
-            "rule": "one_of",
+            "rule": "all",            
             "parameters": [
-                "X",
-                "Y",
+                "D",
+                "E",
                 "Z"
             ]
-        }
+        }                
     ],
 
     "optional_parameters": [
         {
-            "parameter": "E"
+            "parameter": "A"
         },
         {
-            "parameter": "F"
+            "parameter": "B"
         },
         {
             "parameter": "H"
@@ -29,6 +29,9 @@
         },
         {
             "parameter": "Q"
+        },
+        {
+            "parameter": "R"
         },
         {
             "parameter": "S"

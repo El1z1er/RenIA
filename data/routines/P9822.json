@@ -1,15 +1,18 @@
 {
-    "id": "P9811",
-    "name": "Single Surface",
-    "description": "Measure single surface.",
-
+    "id": "P9822",
+    "name": "Angled web or pocket",
+    "description": "Angled web or pocket measurement.",
+    
     "requirements": [
         {
             "rule": "one_of",
-            "parameters": [
-                "X",
-                "Y",
-                "Z"
+            "options": [
+                {
+                    "parameters": ["A", "D"]
+                },
+                {
+                    "parameters": ["A","D", "Z"]
+                }
             ]
         }
     ],
@@ -29,6 +32,9 @@
         },
         {
             "parameter": "Q"
+        },
+        {
+            "parameter": "R"
         },
         {
             "parameter": "S"

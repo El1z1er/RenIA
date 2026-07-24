@@ -1,28 +1,33 @@
 {
-    "id": "P9811",
-    "name": "Single Surface",
-    "description": "Measure single surface.",
+    "id": "P9815",
+    "name": "Interal corner",
+    "description": "Finding an internal corner.",
 
     "requirements": [
         {
-            "rule": "one_of",
+            "rule": "all",            
             "parameters": [
                 "X",
-                "Y",
-                "Z"
+                "Y"
             ]
-        }
+        }                
     ],
 
     "optional_parameters": [
         {
+            "parameter": "B"
+        },
+        {
+            "parameter": "D"
+        },
+        {
             "parameter": "E"
         },
         {
-            "parameter": "F"
+            "parameter": "I"
         },
         {
-            "parameter": "H"
+            "parameter": "J"
         },
         {
             "parameter": "M"
@@ -34,16 +39,13 @@
             "parameter": "S"
         },
         {
-            "parameter": "T"
-        },
-        {
             "parameter": "U"
         },
         {
-            "parameter": "V"
+            "parameter": "W"
         },
         {
-            "parameter": "W"
+            "parameter": "Z"
         }
     ]
 }

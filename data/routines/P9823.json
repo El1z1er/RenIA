@@ -1,15 +1,18 @@
 {
-    "id": "P9811",
-    "name": "Single Surface",
-    "description": "Measure single surface.",
+    "id": "P9823",
+    "name": "3 Point Bore or boss",
+    "description": "3 Point bore or boss measurement.",
 
     "requirements": [
         {
             "rule": "one_of",
-            "parameters": [
-                "X",
-                "Y",
-                "Z"
+            "options": [
+                {
+                    "parameters": ["A", "B", "C", "D"]
+                },
+                {
+                    "parameters": ["A", "B", "C", "D", "Z"]
+                }
             ]
         }
     ],
@@ -29,6 +32,9 @@
         },
         {
             "parameter": "Q"
+        },
+        {
+            "parameter": "R"
         },
         {
             "parameter": "S"
