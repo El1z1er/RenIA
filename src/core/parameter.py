@@ -7,7 +7,6 @@ class Parameter:
         self.description = data.get("description")
         self.type = data.get("type")
 
-        self.required = data.get("required")
         self.default = data.get("default")
 
         self.minimum = data.get("minimum")

@@ -5,7 +5,7 @@
 
     "requirements": [
         {
-            "rule": "all",
+            "rule": "one_or_more",
             "parameters": [
                 "X",
                 "Y",
