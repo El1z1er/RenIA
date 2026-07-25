@@ -1,6 +1,7 @@
 {
     "id": "P9820",
-    "name": "...",
+    "name": "Stock allowance",
+    "description": "Measure stock allowance.",
 
     "requirements": [
         {

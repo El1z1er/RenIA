@@ -5,5 +5,7 @@ class Routine:
         self.id = data["id"]
         self.name = data["name"]
         self.description = data["description"]
-        self.required = data["required"]
-        self.optional = data["optional"]
+
+        self.requirements = data.get("requirements", [])
+        self.optional_parameters = data.get("optional_parameters", [])
+        self.variants = data.get("variants", [])
