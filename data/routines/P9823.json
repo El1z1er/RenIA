@@ -3,15 +3,35 @@
     "name": "3 Point Bore or boss",
     "description": "3 Point bore or boss measurement.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "one_of",
-            "options": [
+            "name": "Bore",
+
+            "requirements": [
                 {
-                    "parameters": ["A", "B", "C", "D"]
-                },
+                    "rule": "all",
+                    "parameters": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Boss",
+
+            "requirements": [
                 {
-                    "parameters": ["A", "B", "C", "D", "Z"]
+                    "rule": "all",
+                    "parameters": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "Z"
+                    ]
                 }
             ]
         }

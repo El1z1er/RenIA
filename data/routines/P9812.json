@@ -3,21 +3,54 @@
     "name": "Web or Pocket",
     "description": "Web or pocket measurement.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "one_of",
-            "options": [
+            "name": "Web X",
+
+            "requirements": [
                 {
-                    "parameters": ["X"]
-                },
+                    "rule": "all",
+                    "parameters": [
+                        "X"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Web Y",
+
+            "requirements": [
                 {
-                    "parameters": ["Y"]
-                },
+                    "rule": "all",
+                    "parameters": [
+                        "Y"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Pocket X",
+
+            "requirements": [
                 {
-                    "parameters": ["X", "Z"]
-                },
+                    "rule": "all",
+                    "parameters": [
+                        "X",
+                        "Z"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Pocket Y",
+
+            "requirements": [
                 {
-                    "parameters": ["Y", "Z"]
+                    "rule": "all",
+                    "parameters": [
+                        "Y",
+                        "Z"
+                    ]
                 }
             ]
         }

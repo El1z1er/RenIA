@@ -3,58 +3,67 @@
     "name": "Angle Measurement",
     "description": "Measure an angled surface in the X or Y plane.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "one_of",
-            "options": [
+            "name": "X axis",
+
+            "requirements": [
                 {
+                    "rule": "all",
                     "parameters": [
                         "X",
                         "D"
-                    ],
-
-                    "optional_parameters": [
-                        {
-                            "parameter": "A"
-                        },
-                        {
-                            "parameter": "B"
-                        },
-                        {
-                            "parameter": "Q"
-                        },
-                        {
-                            "parameter": "W"
-                        },
-                        {
-                            "parameter": "Z"
-                        }
                     ]
-                },
+                }
+            ],
 
+            "optional_parameters": [
                 {
+                    "parameter": "A"
+                },
+                {
+                    "parameter": "B"
+                },
+                {
+                    "parameter": "Q"
+                },
+                {
+                    "parameter": "W"
+                },
+                {
+                    "parameter": "Z"
+                }
+            ]
+        },
+
+        {
+            "name": "Y axis",
+
+            "requirements": [
+                {
+                    "rule": "all",
                     "parameters": [
                         "Y",
                         "D"
-                    ],
-
-                    "optional_parameters": [
-                        {
-                            "parameter": "A"
-                        },
-                        {
-                            "parameter": "B"
-                        },
-                        {
-                            "parameter": "Q"
-                        },
-                        {
-                            "parameter": "W"
-                        },
-                        {
-                            "parameter": "Z"
-                        }
                     ]
+                }
+            ],
+
+            "optional_parameters": [
+                {
+                    "parameter": "A"
+                },
+                {
+                    "parameter": "B"
+                },
+                {
+                    "parameter": "Q"
+                },
+                {
+                    "parameter": "W"
+                },
+                {
+                    "parameter": "Z"
                 }
             ]
         }

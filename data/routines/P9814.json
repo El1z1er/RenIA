@@ -3,15 +3,29 @@
     "name": "Bore or boss",
     "description": "Bore or boss measurement.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "one_of",
-            "options": [
+            "name": "Bore",
+
+            "requirements": [
                 {
-                    "parameters": ["D"]
-                },
+                    "rule": "all",
+                    "parameters": [
+                        "D"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Boss",
+
+            "requirements": [
                 {
-                    "parameters": ["D", "Z"]
+                    "rule": "all",
+                    "parameters": [
+                        "D",
+                        "Z"
+                    ]
                 }
             ]
         }

@@ -1,4 +1,4 @@
-from core.routine_library import RoutineLibrary
+from core.repositories.routine_library import RoutineLibrary
 
 library = RoutineLibrary()
 

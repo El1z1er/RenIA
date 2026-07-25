@@ -3,216 +3,161 @@
     "name": "Feature to feature",
     "description": "Measurement between features.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "one_of",
-            "options": [
+            "name": "Surface",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "Z"
-                    ],
+                    "rule": "all",
+                    "parameters": ["Z"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "E"
-                        },
-                        {
-                            "parameter": "F"
-                        },
-                        {
-                            "parameter": "H"
-                        },
-                        {
-                            "parameter": "M"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "T"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "V"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "E" },
+                { "parameter": "F" },
+                { "parameter": "H" },
+                { "parameter": "M" },
+                { "parameter": "S" },
+                { "parameter": "T" },
+                { "parameter": "U" },
+                { "parameter": "V" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "Angled surface",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "A",
-                        "Z"
-                    ],
+                    "rule": "all",
+                    "parameters": ["A", "Z"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "B"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "B" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "Bore or boss",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "D",
-                        "Z"
-                    ],
+                    "rule": "all",
+                    "parameters": ["D", "Z"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "B"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "B" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "X axis",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "X"
-                    ],
+                    "rule": "all",
+                    "parameters": ["X"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "E"
-                        },
-                        {
-                            "parameter": "F"
-                        },
-                        {
-                            "parameter": "H"
-                        },
-                        {
-                            "parameter": "M"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "T"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "V"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "E" },
+                { "parameter": "F" },
+                { "parameter": "H" },
+                { "parameter": "M" },
+                { "parameter": "S" },
+                { "parameter": "T" },
+                { "parameter": "U" },
+                { "parameter": "V" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "Y axis",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "Y"
-                    ],
+                    "rule": "all",
+                    "parameters": ["Y"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "E"
-                        },
-                        {
-                            "parameter": "F"
-                        },
-                        {
-                            "parameter": "H"
-                        },
-                        {
-                            "parameter": "M"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "T"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "V"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "E" },
+                { "parameter": "F" },
+                { "parameter": "H" },
+                { "parameter": "M" },
+                { "parameter": "S" },
+                { "parameter": "T" },
+                { "parameter": "U" },
+                { "parameter": "V" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "XY distance",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "X",
-                        "Y"
-                    ],
+                    "rule": "all",
+                    "parameters": ["X", "Y"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "B"
-                        },
-                        {
-                            "parameter": "E"
-                        },
-                        {
-                            "parameter": "H"
-                        },
-                        {
-                            "parameter": "M"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "B" },
+                { "parameter": "E" },
+                { "parameter": "H" },
+                { "parameter": "M" },
+                { "parameter": "S" },
+                { "parameter": "U" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "Angled distance",
+
+            "requirements": [
                 {
-                    "parameters": [
-                        "A",
-                        "D"
-                    ],
+                    "rule": "all",
+                    "parameters": ["A", "D"]
+                }
+            ],
 
-                    "optional_parameters": [
-                        {
-                            "parameter": "B"
-                        },
-                        {
-                            "parameter": "E"
-                        },
-                        {
-                            "parameter": "H"
-                        },
-                        {
-                            "parameter": "M"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "W"
-                        }
-                    ]
-                },
+            "optional_parameters": [
+                { "parameter": "B" },
+                { "parameter": "E" },
+                { "parameter": "H" },
+                { "parameter": "M" },
+                { "parameter": "S" },
+                { "parameter": "U" },
+                { "parameter": "W" }
+            ]
+        },
 
+        {
+            "name": "Store feature",
+
+            "requirements": [
                 {
+                    "rule": "all",
                     "parameters": []
                 }
-            ]
+            ],
+
+            "optional_parameters": []
         }
     ]
 }

@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 
-from .parameter import Parameter
+from ..models.parameter import Parameter
 
 
 class ParameterLibrary:
@@ -12,7 +12,7 @@ class ParameterLibrary:
 
     def _load_parameters(self):
         parameters_path = (
-            Path(__file__).resolve().parents[2]
+            Path(__file__).resolve().parents[3]
             / "data"
             / "parameters"
         )

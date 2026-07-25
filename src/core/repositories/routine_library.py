@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 
-from .routine import Routine
+from ..models.routine import Routine
 
 
 class RoutineLibrary:
@@ -15,7 +15,7 @@ class RoutineLibrary:
     def _load_routines(self):
 
         routines_path = (
-            Path(__file__).resolve().parents[2]
+            Path(__file__).resolve().parents[3]
             / "data"
             / "routines"
         )
