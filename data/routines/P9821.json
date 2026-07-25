@@ -1,19 +1,46 @@
 {
     "id": "P9821",
-    "name": "Angle surface",
+    "name": "Angled surface",
     "description": "Angled surface measurement.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "all",            
-            "parameters": [
-                "A",
-                "D"                
+            "name": "Using A and D inputs",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "A",
+                        "D"
+                    ]
+                }
             ]
-        }                
+        },
+        {
+            "name": "Using X, Y, Z inputs",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "X",
+                        "Y",
+                        "Z"
+                    ]
+                }
+            ]
+        }
     ],
 
     "optional_parameters": [
+        {
+            "parameter": "C",
+            "allowed_values": [
+                1,
+                2
+            ]
+        },
         {
             "parameter": "E"
         },

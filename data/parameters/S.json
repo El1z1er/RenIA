@@ -3,5 +3,11 @@
     "name": "S Work Offset",
     "description": "offset to be updated",
     "type": "float",
-    "unit": "mm"
+    "unit": "null",
+     "allowed_ranges": [
+        [0, 0],
+        [1, 6],
+        [53, 59],
+        [101, 400]
+    ]
 }

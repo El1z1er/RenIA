@@ -2,6 +2,6 @@
     "id": "E",
     "name": "E parameter",
     "description": "Depends on routine",
-    "type": "float",
+    "type": "integer",
     "unit": "mm"
 }

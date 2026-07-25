@@ -11,15 +11,24 @@
                 "Y",
                 "Z"
             ]
+        },
+        {
+            "rule": "required",
+            "parameters": [
+                "F"
+            ],
+            "minimum": null,
+            "maximum": null
         }
     ],
 
     "optional_parameters": [
         {
-            "parameter": "F"
-        },
-        {
-            "parameter": "M"
+            "parameter": "M",
+            "allowed_values": [
+                1,
+                2
+            ]
         },
         {
             "parameter": "C",

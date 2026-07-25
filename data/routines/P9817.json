@@ -1,22 +1,56 @@
 {
     "id": "P9817",
-    "name": "External rectangle",
-    "description": "Finding an external rectangle.",
+    "name": "Rectangle",
+    "description": "Finding the centre and orientation of a rectangle.",
 
-    "requirements": [
+    "options": [
         {
-            "rule": "all",            
-            "parameters": [
-                "D",
-                "E",
-                "Z"
+            "name": "External feature",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "D",
+                        "E",
+                        "Z"
+                    ],
+                    "overrides": {
+                        "E": {
+                            "type": "float"
+                        }
+                    }
+                }
             ]
-        }                
+        },
+        {
+            "name": "Internal feature",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        "D",
+                        "E"
+                    ],
+                    "overrides": {
+                        "E": {
+                            "type": "float"
+                        }
+                    }
+                }
+            ]
+        }
     ],
 
     "optional_parameters": [
         {
-            "parameter": "A"
+            "parameter": "A",
+            "allowed_values": [
+                11,
+                12,
+                13
+            ]
         },
         {
             "parameter": "B"
@@ -37,7 +71,8 @@
             "parameter": "S"
         },
         {
-            "parameter": "T"
+            "parameter": "T",
+            "type": "float"
         },
         {
             "parameter": "U"

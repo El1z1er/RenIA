@@ -3,5 +3,10 @@
     "name": "W parameter",
     "description": "Depends on routine",
     "type": "float",
-    "unit": "mm"
+    "unit": "null",
+    "allowed values": [
+        1,
+        2,
+        1.1
+    ]
 }
