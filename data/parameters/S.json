@@ -2,7 +2,7 @@
     "id": "S",
     "name": "S Work Offset",
     "description": "offset to be updated",
-    "type": "float",
+    "type": "integer",
     "unit": "null",
      "allowed_ranges": [
         [0, 0],

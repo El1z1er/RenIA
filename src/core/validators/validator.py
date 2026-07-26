@@ -7,6 +7,7 @@ from .routine_validator import RoutineValidator
 from .parameter_validator import ParameterValidator
 from .permission_validator import PermissionValidator
 from .requirement_validator import RequirementValidator
+from .value_validator import ValueValidator
 
 
 class Validator:
@@ -27,6 +28,8 @@ class Validator:
         self.permission_validator = PermissionValidator()
 
         self.requirement_validator = RequirementValidator()
+
+        self.value_validator = ValueValidator()
 
     def validate(
         self,
@@ -71,6 +74,13 @@ class Validator:
 
         errors.extend(
             self.requirement_validator.validate(
+                definition,
+                parameters
+            )
+        )
+
+        errors.extend(
+            self.value_validator.validate(
                 definition,
                 parameters
             )

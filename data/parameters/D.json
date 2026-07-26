@@ -3,5 +3,6 @@
     "name": "D parameter",
     "description": "Depends on routine",
     "type": "float",
-    "unit": "mm"
+    "unit": "mm",
+    "minimum": 0
 }
