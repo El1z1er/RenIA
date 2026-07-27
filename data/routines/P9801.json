@@ -2,13 +2,11 @@
     "id": "P9801",
     "name": "Calibration Probe",
     "description": "Probe calibration routines.",
-
     "variants": [
         {
             "id": "K1",
             "default": true,
             "description": "Calibrating the probe length.",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -19,15 +17,12 @@
                     ]
                 }
             ],
-
             "optional_parameters": []
         },
-
         {
             "id": "K4",
             "default": false,
             "description": "Calibrating the stylus ball offsets and radii.",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -37,7 +32,6 @@
                     ]
                 }
             ],
-
             "optional_parameters": [
                 {
                     "parameter": "M",
@@ -53,12 +47,10 @@
                 }
             ]
         },
-
         {
             "id": "K5",
             "default": false,
             "description": "Calibrating on a reference sphere.",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -70,7 +62,6 @@
                     ]
                 }
             ],
-
             "optional_parameters": [
                 {
                     "parameter": "M",
@@ -88,6 +79,12 @@
                     "parameter": "Y"
                 }
             ]
+        }
+    ],
+    "match": [
+        {
+            "action": "calibrate",
+            "target": "probe"
         }
     ]
 }

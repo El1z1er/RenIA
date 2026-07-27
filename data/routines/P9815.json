@@ -2,17 +2,15 @@
     "id": "P9815",
     "name": "Interal corner",
     "description": "Finding an internal corner.",
-
     "requirements": [
         {
-            "rule": "all",            
+            "rule": "all",
             "parameters": [
                 "X",
                 "Y"
             ]
-        }                
+        }
     ],
-
     "optional_parameters": [
         {
             "parameter": "B"
@@ -46,6 +44,24 @@
         },
         {
             "parameter": "Z"
+        }
+    ],
+    "match": [
+        {
+            "action": "measure",
+            "target": "internal_corner"
+        },
+        {
+            "action": "measure",
+            "target": "external_corner"
+        },
+        {
+            "action": "update",
+            "target": "internal_corner"
+        },
+        {
+            "action": "update",
+            "target": "external_corner"
         }
     ]
 }

@@ -2,11 +2,9 @@
     "id": "P9821",
     "name": "Angled surface",
     "description": "Angled surface measurement.",
-
     "options": [
         {
             "name": "Using A and D inputs",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -15,11 +13,11 @@
                         "D"
                     ]
                 }
-            ]
+            ],
+            "match": []
         },
         {
             "name": "Using X, Y, Z inputs",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -29,10 +27,10 @@
                         "Z"
                     ]
                 }
-            ]
+            ],
+            "match": []
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "C",

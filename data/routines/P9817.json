@@ -2,11 +2,9 @@
     "id": "P9817",
     "name": "Rectangle",
     "description": "Finding the centre and orientation of a rectangle.",
-
     "options": [
         {
             "name": "External feature",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -21,11 +19,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "match": []
         },
         {
             "name": "Internal feature",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -39,10 +37,10 @@
                         }
                     }
                 }
-            ]
+            ],
+            "match": []
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "A",

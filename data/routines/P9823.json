@@ -2,11 +2,9 @@
     "id": "P9823",
     "name": "3 Point Bore or boss",
     "description": "3 Point bore or boss measurement.",
-
     "options": [
         {
             "name": "Bore",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -17,11 +15,11 @@
                         "D"
                     ]
                 }
-            ]
+            ],
+            "match": []
         },
         {
             "name": "Boss",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -33,10 +31,10 @@
                         "Z"
                     ]
                 }
-            ]
+            ],
+            "match": []
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "E"

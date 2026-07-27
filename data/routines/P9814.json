@@ -2,11 +2,9 @@
     "id": "P9814",
     "name": "Bore or boss",
     "description": "Bore or boss measurement.",
-
     "options": [
         {
             "name": "Bore",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -14,11 +12,20 @@
                         "D"
                     ]
                 }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "bore"
+                },
+                {
+                    "action": "update",
+                    "target": "bore"
+                }
             ]
         },
         {
             "name": "Boss",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -27,10 +34,19 @@
                         "Z"
                     ]
                 }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "boss"
+                },
+                {
+                    "action": "update",
+                    "target": "boss"
+                }
             ]
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "E"

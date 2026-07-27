@@ -1,18 +1,17 @@
-from src.engine.engine import Engine
-from src.engine.request.request import Request
+from src.core.core import Core
 
 
-request = Request(
-    "Quero medir um furo de 20 mm."
+class Objective:
+
+    action = "measure"
+    target = "bore"
+
+
+core = Core()
+
+routine_match = core.routine_matcher.match(
+    Objective()
 )
 
-engine = Engine()
-
-solution = engine.execute(
-    request
-)
-
-print(solution.objective.action)
-print(solution.objective.target)
-print(solution.objective.properties)
-print(solution.routine.id)
+print(routine_match.routine.id)
+print(routine_match.option.name)

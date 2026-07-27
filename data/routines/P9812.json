@@ -2,11 +2,9 @@
     "id": "P9812",
     "name": "Web or Pocket",
     "description": "Web or pocket measurement.",
-
     "options": [
         {
             "name": "Web X",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -14,11 +12,20 @@
                         "X"
                     ]
                 }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "web"
+                },
+                {
+                    "action": "update",
+                    "target": "web"
+                }
             ]
         },
         {
             "name": "Web Y",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -26,11 +33,11 @@
                         "Y"
                     ]
                 }
-            ]
+            ],
+            "match": []
         },
         {
             "name": "Pocket X",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -39,11 +46,20 @@
                         "Z"
                     ]
                 }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "pocket"
+                },
+                {
+                    "action": "update",
+                    "target": "pocket"
+                }
             ]
         },
         {
             "name": "Pocket Y",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -52,10 +68,10 @@
                         "Z"
                     ]
                 }
-            ]
+            ],
+            "match": []
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "E"

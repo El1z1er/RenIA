@@ -2,11 +2,9 @@
     "id": "P9843",
     "name": "Angle Measurement",
     "description": "Measure an angled surface in the X or Y plane.",
-
     "options": [
         {
             "name": "X axis",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -16,7 +14,6 @@
                     ]
                 }
             ],
-
             "optional_parameters": [
                 {
                     "parameter": "A"
@@ -33,12 +30,11 @@
                 {
                     "parameter": "Z"
                 }
-            ]
+            ],
+            "match": []
         },
-
         {
             "name": "Y axis",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -48,7 +44,6 @@
                     ]
                 }
             ],
-
             "optional_parameters": [
                 {
                     "parameter": "A"
@@ -65,7 +60,8 @@
                 {
                     "parameter": "Z"
                 }
-            ]
+            ],
+            "match": []
         }
     ]
 }

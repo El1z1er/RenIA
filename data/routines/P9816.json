@@ -2,17 +2,15 @@
     "id": "P9816",
     "name": "External corner",
     "description": "Finding an external corner.",
-
     "requirements": [
         {
-            "rule": "all",            
+            "rule": "all",
             "parameters": [
                 "X",
                 "Y"
             ]
-        }                
+        }
     ],
-
     "optional_parameters": [
         {
             "parameter": "B"
@@ -46,6 +44,16 @@
         },
         {
             "parameter": "Z"
+        }
+    ],
+    "match": [
+        {
+            "action": "measure",
+            "target": "rectangle"
+        },
+        {
+            "action": "update",
+            "target": "rectangle"
         }
     ]
 }

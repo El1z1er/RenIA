@@ -2,11 +2,9 @@
     "id": "P9819",
     "name": "Bore or boss PCD",
     "description": "Bore or boss PCD measurement.",
-
     "options": [
         {
             "name": "Using Z",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -16,11 +14,11 @@
                         "Z"
                     ]
                 }
-            ]
+            ],
+            "match": []
         },
         {
             "name": "Using K",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -30,10 +28,10 @@
                         "K"
                     ]
                 }
-            ]
+            ],
+            "match": []
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "A"

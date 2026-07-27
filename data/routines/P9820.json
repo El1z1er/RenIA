@@ -2,7 +2,6 @@
     "id": "P9820",
     "name": "Stock allowance",
     "description": "Measure stock allowance.",
-
     "requirements": [
         {
             "rule": "one_of",
@@ -11,7 +10,6 @@
                     "parameters": [
                         "X"
                     ],
-
                     "optional_parameters": [
                         {
                             "parameter": "J"
@@ -34,7 +32,6 @@
                     "parameters": [
                         "Y"
                     ],
-
                     "optional_parameters": [
                         {
                             "parameter": "I"
@@ -57,7 +54,6 @@
                     "parameters": [
                         "Z"
                     ],
-
                     "optional_parameters": [
                         {
                             "parameter": "I"
@@ -77,6 +73,12 @@
                     ]
                 }
             ]
+        }
+    ],
+    "match": [
+        {
+            "action": "measure",
+            "target": "bore_boss_grid"
         }
     ]
 }

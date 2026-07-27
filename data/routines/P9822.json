@@ -2,11 +2,9 @@
     "id": "P9822",
     "name": "Angled web or pocket",
     "description": "Angled web or pocket measurement.",
-
     "options": [
         {
             "name": "Web",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -15,11 +13,16 @@
                         "D"
                     ]
                 }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "web_pocket_grid"
+                }
             ]
         },
         {
             "name": "Pocket",
-
             "requirements": [
                 {
                     "rule": "all",
@@ -29,10 +32,10 @@
                         "Z"
                     ]
                 }
-            ]
+            ],
+            "match": []
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "E"

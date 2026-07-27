@@ -2,7 +2,6 @@
     "id": "P9810",
     "name": "Protected Positioning",
     "description": "Probe trigger monitoring",
-
     "requirements": [
         {
             "rule": "one_or_more",
@@ -21,7 +20,6 @@
             "maximum": null
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "M",
@@ -35,6 +33,12 @@
             "allowed_values": [
                 1
             ]
+        }
+    ],
+    "match": [
+        {
+            "action": "position",
+            "target": "probe"
         }
     ]
 }

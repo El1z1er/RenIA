@@ -14,7 +14,7 @@ class Solver:
         objective
     ):
 
-        routine = self.routine_resolver.resolve(
+        routine_match = self.routine_resolver.resolve(
             objective
         )
 
@@ -22,6 +22,6 @@ class Solver:
 
         solution.objective = objective
 
-        solution.routine = routine
+        solution.routine = routine_match.routine
 
         return solution

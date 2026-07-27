@@ -2,7 +2,6 @@
     "id": "P9811",
     "name": "Single Surface",
     "description": "Measure single surface.",
-
     "requirements": [
         {
             "rule": "one_of",
@@ -13,7 +12,6 @@
             ]
         }
     ],
-
     "optional_parameters": [
         {
             "parameter": "E"
@@ -44,6 +42,16 @@
         },
         {
             "parameter": "W"
+        }
+    ],
+    "match": [
+        {
+            "action": "measure",
+            "target": "surface"
+        },
+        {
+            "action": "update",
+            "target": "surface"
         }
     ]
 }

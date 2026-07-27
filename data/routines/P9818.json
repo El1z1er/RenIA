@@ -2,24 +2,21 @@
     "id": "P9818",
     "name": "4th axis measurement",
     "description": "4th axis measurement.",
-
     "variants": [
         {
             "id": "K1",
             "default": true,
             "description": "Measuring the 4th axis parallel to the Y axis.",
-
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
                         "Y",
-                        "Z"                        
+                        "Z"
                     ]
                 }
             ],
-
-            "optional_parameters": [                
+            "optional_parameters": [
                 {
                     "parameter": "Q"
                 },
@@ -31,27 +28,24 @@
                 },
                 {
                     "parameter": "W"
-                }               
-             ]            
+                }
+            ]
         },
-
         {
             "id": "K2",
             "default": false,
             "description": "Measuring the 4th axis parallel to the X axis.",
-
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
                         "X",
                         "Z",
-                        "K"                        
+                        "K"
                     ]
                 }
             ],
-
-            "optional_parameters": [                
+            "optional_parameters": [
                 {
                     "parameter": "Q"
                 },
@@ -63,27 +57,24 @@
                 },
                 {
                     "parameter": "W"
-                }               
-             ]            
+                }
+            ]
         },
-
         {
             "id": "K3",
             "default": false,
             "description": "Measuring the 4th axis parallel to the X axis with C axis.",
-
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
                         "X",
                         "Y",
-                        "K"                        
+                        "K"
                     ]
                 }
             ],
-
-            "optional_parameters": [                
+            "optional_parameters": [
                 {
                     "parameter": "Q"
                 },
@@ -95,27 +86,24 @@
                 },
                 {
                     "parameter": "W"
-                }               
-             ]            
+                }
+            ]
         },
-
         {
             "id": "K4",
             "default": false,
             "description": "Measuring the 4th axis parallel to the Y axis with C axis.",
-
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
                         "X",
                         "Y",
-                        "K"                        
+                        "K"
                     ]
                 }
             ],
-
-            "optional_parameters": [                
+            "optional_parameters": [
                 {
                     "parameter": "Q"
                 },
@@ -127,9 +115,18 @@
                 },
                 {
                     "parameter": "W"
-                }               
-             ]            
+                }
+            ]
+        }
+    ],
+    "match": [
+        {
+            "action": "measure",
+            "target": "rotary_axis"
+        },
+        {
+            "action": "update",
+            "target": "rotary_axis"
         }
     ]
 }
-
