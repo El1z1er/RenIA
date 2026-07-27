@@ -52,6 +52,18 @@ class RequirementValidator:
 
     # --------------------------------------------------
 
+    def _parameter_ids(
+        self,
+        requirement
+    ):
+
+        return [
+            parameter["parameter"]
+            for parameter in requirement.get("parameters", [])
+        ]
+
+    # --------------------------------------------------
+
     def _validate_required(
         self,
         requirement,
@@ -60,7 +72,7 @@ class RequirementValidator:
 
         errors = []
 
-        for parameter in requirement["parameters"]:
+        for parameter in self._parameter_ids(requirement):
 
             if parameter not in parameters:
 
@@ -80,7 +92,7 @@ class RequirementValidator:
 
         errors = []
 
-        for parameter in requirement["parameters"]:
+        for parameter in self._parameter_ids(requirement):
 
             if parameter not in parameters:
 
@@ -100,7 +112,9 @@ class RequirementValidator:
 
         errors = []
 
-        required = requirement["parameters"]
+        required = self._parameter_ids(
+            requirement
+        )
 
         if not any(
             parameter in parameters
@@ -124,7 +138,9 @@ class RequirementValidator:
 
         errors = []
 
-        required = requirement["parameters"]
+        required = self._parameter_ids(
+            requirement
+        )
 
         count = sum(
             parameter in parameters

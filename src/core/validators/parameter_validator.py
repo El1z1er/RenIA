@@ -1,11 +1,8 @@
 class ParameterValidator:
 
-    def __init__(self, parameter_library):
-
-        self.parameters = parameter_library
-
     def validate(
         self,
+        definition,
         parameters
     ):
 
@@ -13,7 +10,7 @@ class ParameterValidator:
 
         for parameter in parameters:
 
-            if not self.parameters.exists(parameter):
+            if definition.get_parameter(parameter) is None:
 
                 errors.append(
                     f"Unknown parameter '{parameter}'."

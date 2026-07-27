@@ -1,5 +1,4 @@
 from ..repositories.routine_library import RoutineLibrary
-from ..repositories.parameter_library import ParameterLibrary
 
 from ..resolvers.definition_resolver import DefinitionResolver
 
@@ -15,20 +14,13 @@ class Validator:
     def __init__(self):
 
         self.routines = RoutineLibrary()
-        self.parameters = ParameterLibrary()
 
         self.definition_resolver = DefinitionResolver()
 
         self.routine_validator = RoutineValidator()
-
-        self.parameter_validator = ParameterValidator(
-            self.parameters
-        )
-
+        self.parameter_validator = ParameterValidator()
         self.permission_validator = PermissionValidator()
-
         self.requirement_validator = RequirementValidator()
-
         self.value_validator = ValueValidator()
 
     def validate(
@@ -49,12 +41,6 @@ class Validator:
             )
         )
 
-        errors.extend(
-            self.parameter_validator.validate(
-                parameters
-            )
-        )
-
         if errors:
             return False, errors
 
@@ -62,6 +48,13 @@ class Validator:
             routine,
             parameters,
             option_name
+        )
+
+        errors.extend(
+            self.parameter_validator.validate(
+                definition,
+                parameters
+            )
         )
 
         errors.extend(

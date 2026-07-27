@@ -11,18 +11,23 @@ class PermissionValidator:
 
         allowed = set()
 
+        # Parâmetros definidos nos requirements
         for requirement in definition.requirements:
 
-            allowed.update(
-                requirement["parameters"]
-            )
+            for parameter in requirement.get("parameters", []):
 
+                allowed.add(
+                    parameter["parameter"]
+                )
+
+        # Parâmetros opcionais
         for optional in definition.optional_parameters:
 
             allowed.add(
                 optional["parameter"]
             )
 
+        # Verifica se os parâmetros informados são permitidos
         for parameter in parameters:
 
             if parameter not in allowed:

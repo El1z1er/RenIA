@@ -17,26 +17,12 @@ class RoutineDefinition:
             if parameter["parameter"] == parameter_id:
                 return parameter
 
-        # Depois procura overrides dos obrigatórios
+        # Depois procura nos parâmetros dos requirements
         for requirement in self.requirements:
 
-            overrides = requirement.get(
-                "overrides",
-                {}
-            )
+            for parameter in requirement.get("parameters", []):
 
-            if parameter_id in overrides:
+                if parameter["parameter"] == parameter_id:
+                    return parameter
 
-                parameter = {
-                    "parameter": parameter_id
-                }
-
-                parameter.update(
-                    overrides[parameter_id]
-                )
-
-                return parameter
-
-        return {
-            "parameter": parameter_id
-        }
+        return None
