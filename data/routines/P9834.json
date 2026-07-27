@@ -1,255 +1,436 @@
 {
     "id": "P9834",
     "name": "Feature to feature",
-    "description": "Measurement between features.",
+    "description": "Determine feature-to-feature data by comparing the current measurement with a previously stored measurement.",
+
     "options": [
         {
-            "name": "Surface",
-            "requirements": [
+            "name": "Store feature",
+            "description": "Store the output data from the previous measurement cycle as feature P1.",
+
+            "requirements": [],
+
+            "optional_parameters": [],
+
+            "match": [
                 {
-                    "rule": "all",
-                    "parameters": [
-                        "Z"
-                    ]
+                    "action": "store",
+                    "target": "feature"
                 }
-            ],
-            "optional_parameters": [
-                {
-                    "parameter": "E"
-                },
-                {
-                    "parameter": "F"
-                },
-                {
-                    "parameter": "H"
-                },
-                {
-                    "parameter": "M"
-                },
-                {
-                    "parameter": "S"
-                },
-                {
-                    "parameter": "T"
-                },
-                {
-                    "parameter": "U"
-                },
-                {
-                    "parameter": "V"
-                },
-                {
-                    "parameter": "W"
-                }
-            ],
-            "match": []
+            ]
         },
+
         {
-            "name": "Angled surface",
+            "name": "X distance",
+            "description": "Determine the distance between P1 and P2 in the X axis.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "A",
-                        "Z"
+                        {
+                            "parameter": "X",
+                            "attribute": "x_distance",
+                            "type": "float",
+                            "description": "Nominal incremental distance between P1 and P2 in the X axis."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
-                    "parameter": "B"
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "F",
+                    "attribute": "feedback_percentage",
+                    "type": "float",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Feedback percentage used when updating a tool offset."
+                },
+                {
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance of the measured feature."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset to update. Valid only when P2 data originates from cycle P9811."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
+                },
+                {
+                    "parameter": "V",
+                    "attribute": "null_band",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Tolerance zone where no tool offset correction occurs."
+                },
+                {
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
                 }
             ],
-            "match": []
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "feature_distance_x"
+                }
+            ]
         },
+
         {
-            "name": "Bore or boss",
+            "name": "Y distance",
+            "description": "Determine the distance between P1 and P2 in the Y axis.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "D",
-                        "Z"
+                        {
+                            "parameter": "Y",
+                            "attribute": "y_distance",
+                            "type": "float",
+                            "description": "Nominal incremental distance between P1 and P2 in the Y axis."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
-                    "parameter": "B"
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "F",
+                    "attribute": "feedback_percentage",
+                    "type": "float",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Feedback percentage used when updating a tool offset."
+                },
+                {
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance of the measured feature."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset to update. Valid only when P2 data originates from cycle P9811."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
+                },
+                {
+                    "parameter": "V",
+                    "attribute": "null_band",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Tolerance zone where no tool offset correction occurs."
+                },
+                {
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
                 }
             ],
-            "match": []
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "feature_distance_y"
+                }
+            ]
         },
-        {
-            "name": "X axis",
-            "requirements": [
-                {
-                    "rule": "all",
-                    "parameters": [
-                        "X"
-                    ]
-                }
-            ],
-            "optional_parameters": [
-                {
-                    "parameter": "E"
-                },
-                {
-                    "parameter": "F"
-                },
-                {
-                    "parameter": "H"
-                },
-                {
-                    "parameter": "M"
-                },
-                {
-                    "parameter": "S"
-                },
-                {
-                    "parameter": "T"
-                },
-                {
-                    "parameter": "U"
-                },
-                {
-                    "parameter": "V"
-                },
-                {
-                    "parameter": "W"
-                }
-            ],
-            "match": []
-        },
-        {
-            "name": "Y axis",
-            "requirements": [
-                {
-                    "rule": "all",
-                    "parameters": [
-                        "Y"
-                    ]
-                }
-            ],
-            "optional_parameters": [
-                {
-                    "parameter": "E"
-                },
-                {
-                    "parameter": "F"
-                },
-                {
-                    "parameter": "H"
-                },
-                {
-                    "parameter": "M"
-                },
-                {
-                    "parameter": "S"
-                },
-                {
-                    "parameter": "T"
-                },
-                {
-                    "parameter": "U"
-                },
-                {
-                    "parameter": "V"
-                },
-                {
-                    "parameter": "W"
-                }
-            ],
-            "match": []
-        },
+
         {
             "name": "XY distance",
+            "description": "Determine the XY distance between P1 and P2.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "X",
-                        "Y"
+                        {
+                            "parameter": "X",
+                            "attribute": "x_distance",
+                            "type": "float",
+                            "description": "Nominal incremental X distance."
+                        },
+                        {
+                            "parameter": "Y",
+                            "attribute": "y_distance",
+                            "type": "float",
+                            "description": "Nominal incremental Y distance."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Angular tolerance."
                 },
                 {
-                    "parameter": "E"
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
                 },
                 {
-                    "parameter": "H"
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance."
                 },
                 {
-                    "parameter": "M"
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "U"
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
                 }
             ],
-            "match": []
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "feature_distance_xy"
+                }
+            ]
         },
+
         {
-            "name": "Angled distance",
+            "name": "Angular distance",
+            "description": "Determine the distance between P1 and P2 using an angle and minimum distance.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "A",
-                        "D"
+                        {
+                            "parameter": "A",
+                            "attribute": "measurement_angle",
+                            "type": "float",
+                            "description": "Angle of P2 with respect to P1 measured from the positive X axis."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "minimum_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Minimum distance between P1 and P2."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Angular tolerance."
                 },
                 {
-                    "parameter": "E"
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
                 },
                 {
-                    "parameter": "H"
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance."
                 },
                 {
-                    "parameter": "M"
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "U"
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
                 }
             ],
-            "match": []
-        },
-        {
-            "name": "Store feature",
-            "requirements": [
+
+            "match": [
                 {
-                    "rule": "all",
-                    "parameters": []
+                    "action": "measure",
+                    "target": "feature_distance_angle"
                 }
-            ],
-            "optional_parameters": [],
-            "match": []
+            ]
         }
     ]
 }

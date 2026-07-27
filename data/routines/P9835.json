@@ -1,34 +1,69 @@
 {
     "id": "P9835",
-    "name": "SPC",
-    "description": "Statistical Process Control.",
+    "name": "SPC tool offset update",
+    "description": "Update a tool offset using Statistical Process Control (SPC). The correction is applied from the average value of a configurable sequence of measurements.",
+
     "requirements": [
         {
             "rule": "all",
             "parameters": [
-                "T",
-                "M"
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset number to be updated."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "spc_storage_offset",
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Base spare tool offset used by the SPC algorithm. Offset M stores the accumulated average value and offset M+1 stores the measurement counter."
+                }
             ]
         }
     ],
+
     "optional_parameters": [
         {
-            "parameter": "V"
+            "parameter": "V",
+            "attribute": "null_band",
+            "type": "float",
+            "default": 0,
+            "description": "Tolerance zone in which no corrective tool offset update is applied."
         },
         {
-            "parameter": "C"
+            "parameter": "C",
+            "attribute": "sample_count",
+            "type": "integer",
+            "minimum": 1,
+            "default": 3,
+            "description": "Number of consecutive out-of-tolerance measurements required before the corrective action is applied."
         },
         {
-            "parameter": "F"
+            "parameter": "F",
+            "attribute": "feedback_percentage",
+            "type": "float",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Feedback percentage applied to the calculated tool offset correction."
         },
         {
-            "parameter": "Z"
+            "parameter": "Z",
+            "attribute": "update_length_offset",
+            "type": "float",
+            "description": "When present, updates the tool length offset register. If omitted, the tool radius offset register is updated. Used only with Type C tool offsets."
         }
     ],
+
     "match": [
         {
-            "action": "calibrate",
-            "target": "probe_length_radius"
+            "action": "update",
+            "target": "tool_offset"
+        },
+        {
+            "action": "control",
+            "target": "tool_offset_spc"
         }
     ]
 }

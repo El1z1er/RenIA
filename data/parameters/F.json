@@ -1,9 +1,0 @@
-{
-    "id": "F",
-    "name": "F parameter",
-    "description": "Depends on routine",
-    "type": "float",
-    "unit": "mm",
-    "minimum": 0,
-    "maximum": 1
-}

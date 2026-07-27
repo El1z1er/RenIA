@@ -1,90 +1,188 @@
 {
     "id": "P9801",
-    "name": "Calibration Probe",
-    "description": "Probe calibration routines.",
+    "name": "Probe Calibration",
+    "description": "Calibration routines for probe length, stylus offsets and stylus radius.",
+
     "variants": [
         {
             "id": "K1",
+            "name": "Probe Length",
             "default": true,
-            "description": "Calibrating the probe length.",
+            "description": "Calibrate the probe length using a reference surface.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "B",
-                        "Z",
-                        "T"
+                        {
+                            "parameter": "B",
+                            "attribute": "stylus_ball_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal stylus ball diameter."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "reference_surface_z_position",
+                            "type": "float",
+                            "description": "Absolute Z position of the reference surface."
+                        },
+                        {
+                            "parameter": "T",
+                            "attribute": "tool_offset",
+                            "type": "integer",
+                            "minimum": 1,
+                            "description": "Tool offset to receive the calibrated probe length."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": []
         },
+
         {
             "id": "K4",
+            "name": "Stylus Offset and Radius",
             "default": false,
-            "description": "Calibrating the stylus ball offsets and radii.",
+            "description": "Calibrate stylus XY offsets and vector radii using a reference feature.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "B",
-                        "D"
+                        {
+                            "parameter": "B",
+                            "attribute": "stylus_ball_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal stylus ball diameter."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "reference_feature_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Reference diameter of the calibration feature."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
                     "parameter": "M",
+                    "attribute": "automatic_centering",
+                    "type": "integer",
                     "allowed_values": [
                         180
-                    ]
+                    ],
+                    "description": "Automatically locate the feature centre using a second spindle orientation (180°)."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "Z"
+                    "parameter": "Z",
+                    "attribute": "measurement_z_position",
+                    "type": "float",
+                    "description": "Absolute Z measuring position when calibrating an external feature."
                 }
             ]
         },
+
         {
             "id": "K5",
+            "name": "Reference Sphere",
             "default": false,
-            "description": "Calibrating on a reference sphere.",
+            "description": "Perform complete probe calibration using a calibrated reference sphere.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "B",
-                        "D",
-                        "Z",
-                        "T"
+                        {
+                            "parameter": "B",
+                            "attribute": "stylus_ball_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal stylus ball diameter."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "reference_sphere_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Reference sphere diameter."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "reference_sphere_center_z",
+                            "type": "float",
+                            "description": "Absolute Z position of the sphere centre."
+                        },
+                        {
+                            "parameter": "T",
+                            "attribute": "tool_offset",
+                            "type": "integer",
+                            "minimum": 1,
+                            "description": "Tool offset to receive the calibrated probe length."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
                     "parameter": "M",
+                    "attribute": "automatic_centering",
+                    "type": "integer",
                     "allowed_values": [
                         180
-                    ]
+                    ],
+                    "description": "Automatically locate the sphere centre using a second spindle orientation (180°)."
                 },
                 {
-                    "parameter": "E"
+                    "parameter": "E",
+                    "attribute": "reference_surface_z_position",
+                    "type": "float",
+                    "description": "Reference surface Z position used instead of calibrating on top of the sphere."
                 },
                 {
-                    "parameter": "X"
+                    "parameter": "X",
+                    "attribute": "machine_reference_x",
+                    "type": "float",
+                    "description": "Machine reference X position associated with parameter E."
                 },
                 {
-                    "parameter": "Y"
+                    "parameter": "Y",
+                    "attribute": "machine_reference_y",
+                    "type": "float",
+                    "description": "Machine reference Y position associated with parameter E."
                 }
             ]
         }
     ],
+
     "match": [
         {
             "action": "calibrate",
-            "target": "probe"
+            "target": "probe_length"
+        },
+        {
+            "action": "calibrate",
+            "target": "stylus_offsets"
+        },
+        {
+            "action": "calibrate",
+            "target": "stylus_radius"
+        },
+        {
+            "action": "calibrate",
+            "target": "vector_radius"
         }
     ]
 }

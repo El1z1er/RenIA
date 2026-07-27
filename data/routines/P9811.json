@@ -2,48 +2,124 @@
     "id": "P9811",
     "name": "Single Surface",
     "description": "Measure single surface.",
+
     "requirements": [
         {
             "rule": "one_of",
             "parameters": [
-                "X",
-                "Y",
-                "Z"
+                {
+                    "parameter": "X",
+                    "attribute": "x_position",
+                    "type": "float",
+                    "description": "Target X position of the surface to be measured."
+                },
+                {
+                    "parameter": "Y",
+                    "attribute": "y_position",
+                    "type": "float",
+                    "description": "Target Y position of the surface to be measured."
+                },
+                {
+                    "parameter": "Z",
+                    "attribute": "z_position",
+                    "type": "float",
+                    "description": "Target Z position of the surface to be measured."
+                }
             ]
         }
     ],
+
     "optional_parameters": [
         {
-            "parameter": "E"
+            "parameter": "E",
+            "attribute": "experience_offset",
+            "type": "integer",
+            "minimum": 0,
+            "description": "Tool offset containing the experience value applied to the measured result."
         },
         {
-            "parameter": "F"
+            "parameter": "F",
+            "attribute": "feedback_percentage",
+            "type": "float",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Feedback percentage applied when updating the tool offset or feedrate for the protected positioning cycle."
         },
         {
-            "parameter": "H"
+            "parameter": "H",
+            "attribute": "feature_tolerance",
+            "type": "float",
+            "minimum": 0,
+            "description": "Nominal tolerance of the measured feature."
         },
         {
-            "parameter": "M"
+            "parameter": "M",
+            "attribute": "true_position_tolerance",
+            "type": "float",
+            "minimum": 0,
+            "description": "True position tolerance of the measured feature."
         },
         {
-            "parameter": "Q"
+            "parameter": "Q",
+            "attribute": "probe_overtravel",
+            "type": "float",
+            "minimum": 0,
+            "description": "Probe overtravel distance used while searching for the surface."
         },
         {
-            "parameter": "S"
+            "parameter": "S",
+            "attribute": "work_offset",
+            "type": "integer",
+            "allowed_ranges": [
+                {
+                    "minimum": 0,
+                    "maximum": 6
+                },
+                {
+                    "minimum": 53,
+                    "maximum": 59
+                },
+                {
+                    "minimum": 101,
+                    "maximum": 400
+                }
+            ],
+            "description": "Work offset to update with the measured error."
         },
         {
-            "parameter": "T"
+            "parameter": "T",
+            "attribute": "tool_offset",
+            "type": "integer",
+            "minimum": 0,
+            "description": "Tool offset to update with the measured error."
         },
         {
-            "parameter": "U"
+            "parameter": "U",
+            "attribute": "upper_tolerance_limit",
+            "type": "float",
+            "minimum": 0,
+            "description": "Maximum permitted error before cancelling the offset update and raising an alarm."
         },
         {
-            "parameter": "V"
+            "parameter": "V",
+            "attribute": "null_band",
+            "type": "float",
+            "default": 0,
+            "description": "Tolerance zone where no offset correction is applied."
         },
         {
-            "parameter": "W"
+            "parameter": "W",
+            "attribute": "print_output",
+            "type": "float",
+            "allowed_values": [
+                1,
+                2,
+                1.1
+            ],
+            "description": "Print or report the measurement result."
         }
     ],
+
     "match": [
         {
             "action": "measure",

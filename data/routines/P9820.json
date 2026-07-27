@@ -2,83 +2,211 @@
     "id": "P9820",
     "name": "Stock allowance",
     "description": "Measure stock allowance.",
-    "requirements": [
+
+    "options": [
         {
-            "rule": "one_of",
-            "options": [
+            "name": "X axis",
+            "requirements": [
                 {
+                    "rule": "all",
                     "parameters": [
-                        "X"
-                    ],
-                    "optional_parameters": [
                         {
-                            "parameter": "J"
-                        },
-                        {
-                            "parameter": "K"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "Q"
-                        }
-                    ]
-                },
-                {
-                    "parameters": [
-                        "Y"
-                    ],
-                    "optional_parameters": [
-                        {
-                            "parameter": "I"
-                        },
-                        {
-                            "parameter": "K"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "Q"
-                        }
-                    ]
-                },
-                {
-                    "parameters": [
-                        "Z"
-                    ],
-                    "optional_parameters": [
-                        {
-                            "parameter": "I"
-                        },
-                        {
-                            "parameter": "J"
-                        },
-                        {
-                            "parameter": "S"
-                        },
-                        {
-                            "parameter": "U"
-                        },
-                        {
-                            "parameter": "Q"
+                            "parameter": "X",
+                            "attribute": "x_position",
+                            "type": "float",
+                            "description": "Nominal X position where the stock allowance will be measured."
                         }
                     ]
                 }
+            ],
+            "optional_parameters": [
+                {
+                    "parameter": "J",
+                    "attribute": "y_clearance",
+                    "type": "float",
+                    "description": "Y-axis clearance before the probing move."
+                },
+                {
+                    "parameter": "K",
+                    "attribute": "z_clearance",
+                    "type": "float",
+                    "description": "Z-axis clearance before the probing move."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit. If exceeded, the tool offset is not updated and the cycle stops with an alarm."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "description": "Probe overtravel distance. Default for X/Y measurements is 10 mm."
+                }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "stock_allowance"
+                }
             ]
-        }
-    ],
-    "match": [
+        },
         {
-            "action": "measure",
-            "target": "bore_boss_grid"
+            "name": "Y axis",
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        {
+                            "parameter": "Y",
+                            "attribute": "y_position",
+                            "type": "float",
+                            "description": "Nominal Y position where the stock allowance will be measured."
+                        }
+                    ]
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "parameter": "I",
+                    "attribute": "x_clearance",
+                    "type": "float",
+                    "description": "X-axis clearance before the probing move."
+                },
+                {
+                    "parameter": "K",
+                    "attribute": "z_clearance",
+                    "type": "float",
+                    "description": "Z-axis clearance before the probing move."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit. If exceeded, the tool offset is not updated and the cycle stops with an alarm."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "description": "Probe overtravel distance. Default for X/Y measurements is 10 mm."
+                }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "stock_allowance"
+                }
+            ]
+        },
+        {
+            "name": "Z axis",
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        {
+                            "parameter": "Z",
+                            "attribute": "z_position",
+                            "type": "float",
+                            "description": "Nominal Z position where the stock allowance will be measured."
+                        }
+                    ]
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "parameter": "I",
+                    "attribute": "x_clearance",
+                    "type": "float",
+                    "description": "X-axis clearance before the probing move."
+                },
+                {
+                    "parameter": "J",
+                    "attribute": "y_clearance",
+                    "type": "float",
+                    "description": "Y-axis clearance before the probing move."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit. If exceeded, the tool offset is not updated and the cycle stops with an alarm."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "description": "Probe overtravel distance. Default for Z measurements is 4 mm."
+                }
+            ],
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "stock_allowance"
+                }
+            ]
         }
     ]
 }

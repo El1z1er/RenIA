@@ -1,19 +1,35 @@
 {
     "id": "P9832",
-    "name": "Probe Start",
-    "description": "Switch the probe on and configure the operational mode.",
+    "name": "Probe start",
+    "description": "Switch the probe on, optionally select the operating mode and prepare the print port for subsequent measurement cycles.",
+
     "requirements": [],
+
     "optional_parameters": [
         {
-            "parameter": "D"
+            "parameter": "D",
+            "attribute": "operating_mode",
+            "type": "integer",
+            "allowed_values": [
+                1,
+                2
+            ],
+            "description": "Probe operating mode. D1 enables test mode with reduced positioning feedrate and cycle stop before each measurement. D2 enables production mode with maximum positioning feedrate and no protected positioning."
         },
         {
-            "parameter": "W"
+            "parameter": "W",
+            "attribute": "print_flag",
+            "type": "integer",
+            "allowed_values": [
+                1
+            ],
+            "description": "Opens the print port (POPEN) for subsequent measurement cycles that request printed output."
         }
     ],
+
     "match": [
         {
-            "action": "start_probe",
+            "action": "start",
             "target": "probe"
         }
     ]

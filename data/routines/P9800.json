@@ -1,49 +1,98 @@
 {
     "id": "P9800",
-    "name": "Supa Touch",
-    "description": "Probe trigger optimisation",
+    "name": "SupaTouch",
+    "description": "Optimise probing feedrates and trigger behaviour for the current probe, machine and environmental conditions.",
+
     "requirements": [
         {
             "rule": "required",
             "parameters": [
-                "B"
+                {
+                    "parameter": "B",
+                    "attribute": "stylus_ball_diameter",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal diameter of the stylus ball."
+                }
             ]
         },
         {
             "rule": "one_of",
             "parameters": [
-                "X",
-                "Y"
+                {
+                    "parameter": "X",
+                    "attribute": "x_touch_position",
+                    "type": "float",
+                    "description": "Absolute X position used when performing the Z-axis optimisation touch."
+                },
+                {
+                    "parameter": "Y",
+                    "attribute": "y_touch_position",
+                    "type": "float",
+                    "description": "Absolute Y position used when performing the Z-axis optimisation touch."
+                }
             ]
         }
     ],
+
     "optional_parameters": [
         {
-            "parameter": "H"
+            "parameter": "H",
+            "attribute": "required_repeatability",
+            "type": "float",
+            "minimum": 0,
+            "description": "Required measurement repeatability used to determine the optimum probing strategy."
         },
         {
-            "parameter": "F"
+            "parameter": "F",
+            "attribute": "fast_positioning_feedrate_limit",
+            "type": "float",
+            "minimum": 0,
+            "description": "Maximum positioning feedrate allowed during optimisation."
         },
         {
-            "parameter": "U"
+            "parameter": "U",
+            "attribute": "xy_overtravel_limit",
+            "type": "float",
+            "minimum": 0,
+            "description": "Maximum permitted XY probe overtravel during optimisation."
         },
         {
-            "parameter": "W"
+            "parameter": "W",
+            "attribute": "z_overtravel_limit",
+            "type": "float",
+            "minimum": 0,
+            "description": "Maximum permitted Z-axis probe overtravel during optimisation."
         },
         {
-            "parameter": "Q"
+            "parameter": "Q",
+            "attribute": "probe_overtravel",
+            "type": "float",
+            "minimum": 0,
+            "description": "Probe overtravel distance used while searching for the optimisation surface."
         },
         {
-            "parameter": "R"
+            "parameter": "R",
+            "attribute": "radial_clearance",
+            "type": "float",
+            "description": "Radial clearance applied before approaching the optimisation point."
         },
         {
-            "parameter": "Z"
+            "parameter": "Z",
+            "attribute": "xy_touch_position_z",
+            "type": "float",
+            "description": "Absolute Z position used when performing X-axis or Y-axis optimisation touches."
         }
     ],
+
     "match": [
         {
             "action": "optimize",
-            "target": "probe_measurement"
+            "target": "probe_feedrates"
+        },
+        {
+            "action": "optimize",
+            "target": "probe_trigger"
         }
     ]
 }

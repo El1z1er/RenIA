@@ -1,58 +1,144 @@
 {
     "id": "P9819",
     "name": "Bore or boss PCD",
-    "description": "Bore or boss PCD measurement.",
+    "description": "Measures a series of bores or bosses on a pitch circle diameter (PCD). The probe automatically measures each feature and returns to the centre of the PCD.",
+
     "options": [
         {
-            "name": "Using Z",
+            "name": "Boss",
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "C",
-                        "D",
-                        "Z"
+                        {
+                            "parameter": "C",
+                            "attribute": "pitch_circle_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Pitch circle diameter (PCD) of the bore or boss pattern."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal boss diameter."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "measurement_height",
+                            "type": "float",
+                            "description": "Absolute Z-axis position at which the boss is measured."
+                        }
                     ]
                 }
             ],
-            "match": []
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "boss_pcd"
+                },
+                {
+                    "action": "update",
+                    "target": "boss_pcd"
+                }
+            ]
         },
         {
-            "name": "Using K",
+            "name": "Bore",
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "C",
-                        "D",
-                        "K"
+                        {
+                            "parameter": "C",
+                            "attribute": "pitch_circle_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Pitch circle diameter (PCD) of the bore or boss pattern."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal bore diameter."
+                        },
+                        {
+                            "parameter": "K",
+                            "attribute": "measurement_height",
+                            "type": "float",
+                            "description": "Absolute Z-axis position at which the bore is measured."
+                        }
                     ]
                 }
             ],
-            "match": []
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "bore_pcd"
+                },
+                {
+                    "action": "update",
+                    "target": "bore_pcd"
+                }
+            ]
         }
     ],
+
     "optional_parameters": [
         {
-            "parameter": "A"
+            "parameter": "A",
+            "attribute": "start_angle",
+            "type": "float",
+            "default": 0,
+            "description": "Angle from the X axis to the first bore or boss."
         },
         {
-            "parameter": "B"
+            "parameter": "B",
+            "attribute": "feature_count",
+            "type": "integer",
+            "minimum": 1,
+            "default": 1,
+            "description": "Number of bore or boss features on the PCD."
         },
         {
-            "parameter": "H"
+            "parameter": "H",
+            "attribute": "feature_tolerance",
+            "type": "float",
+            "minimum": 0,
+            "description": "Nominal tolerance of the measured feature."
         },
         {
-            "parameter": "M"
+            "parameter": "M",
+            "attribute": "true_position_tolerance",
+            "type": "float",
+            "minimum": 0,
+            "description": "True position tolerance."
         },
         {
-            "parameter": "Q"
+            "parameter": "Q",
+            "attribute": "probe_overtravel",
+            "type": "float",
+            "minimum": 0,
+            "description": "Probe overtravel distance."
         },
         {
-            "parameter": "R"
+            "parameter": "R",
+            "attribute": "radial_clearance",
+            "type": "float",
+            "description": "Radial clearance before approaching each feature."
         },
         {
-            "parameter": "W"
+            "parameter": "W",
+            "attribute": "print_output",
+            "type": "float",
+            "allowed_values": [
+                1,
+                2,
+                1.1
+            ],
+            "description": "Print or report the measurement result."
         }
     ]
 }

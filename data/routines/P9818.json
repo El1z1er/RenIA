@@ -1,120 +1,320 @@
 {
     "id": "P9818",
     "name": "4th axis measurement",
-    "description": "4th axis measurement.",
+    "description": "Measures the angular error of a rotary axis by probing two points on a reference surface and calculates the correction required for the rotary axis.",
     "variants": [
         {
             "id": "K1",
             "default": true,
-            "description": "Measuring the 4th axis parallel to the Y axis.",
+            "description": "Measure a rotary axis parallel to the Y axis.",
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "Y",
-                        "Z"
+                        {
+                            "parameter": "Y",
+                            "attribute": "measurement_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Distance between the two measurement positions along the Y axis."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "surface_position",
+                            "type": "float",
+                            "description": "Expected Z position of the reference surface."
+                        }
                     ]
                 }
             ],
             "optional_parameters": [
                 {
-                    "parameter": "Q"
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
                 },
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Half of the total angular tolerance."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print or report the measurement result."
                 }
             ]
         },
         {
             "id": "K2",
             "default": false,
-            "description": "Measuring the 4th axis parallel to the X axis.",
+            "description": "Measure a rotary axis parallel to the X axis.",
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "X",
-                        "Z",
-                        "K"
+                        {
+                            "parameter": "X",
+                            "attribute": "measurement_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Distance between the two measurement positions along the X axis."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "surface_position",
+                            "type": "float",
+                            "description": "Expected Z position of the reference surface."
+                        },
+                        {
+                            "parameter": "K",
+                            "attribute": "measurement_variant",
+                            "type": "integer",
+                            "allowed_values": [
+                                2
+                            ],
+                            "description": "Selects measurement variant K2."
+                        }
                     ]
                 }
             ],
             "optional_parameters": [
                 {
-                    "parameter": "Q"
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
                 },
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Half of the total angular tolerance."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print or report the measurement result."
                 }
             ]
         },
         {
             "id": "K3",
             "default": false,
-            "description": "Measuring the 4th axis parallel to the X axis with C axis.",
+            "description": "Measure a C axis using the X direction.",
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "X",
-                        "Y",
-                        "K"
+                        {
+                            "parameter": "X",
+                            "attribute": "measurement_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Distance between the two measurement positions along the X axis."
+                        },
+                        {
+                            "parameter": "Y",
+                            "attribute": "surface_position",
+                            "type": "float",
+                            "description": "Expected Y position of the reference surface."
+                        },
+                        {
+                            "parameter": "K",
+                            "attribute": "measurement_variant",
+                            "type": "integer",
+                            "allowed_values": [
+                                3
+                            ],
+                            "description": "Selects measurement variant K3."
+                        }
                     ]
                 }
             ],
             "optional_parameters": [
                 {
-                    "parameter": "Q"
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
                 },
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Half of the total angular tolerance."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print or report the measurement result."
                 }
             ]
         },
         {
             "id": "K4",
             "default": false,
-            "description": "Measuring the 4th axis parallel to the Y axis with C axis.",
+            "description": "Measure a C axis using the Y direction.",
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "X",
-                        "Y",
-                        "K"
+                        {
+                            "parameter": "X",
+                            "attribute": "surface_position",
+                            "type": "float",
+                            "description": "Expected X position of the reference surface."
+                        },
+                        {
+                            "parameter": "Y",
+                            "attribute": "measurement_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Distance between the two measurement positions along the Y axis."
+                        },
+                        {
+                            "parameter": "K",
+                            "attribute": "measurement_variant",
+                            "type": "integer",
+                            "allowed_values": [
+                                4
+                            ],
+                            "description": "Selects measurement variant K4."
+                        }
                     ]
                 }
             ],
             "optional_parameters": [
                 {
-                    "parameter": "Q"
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
                 },
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Half of the total angular tolerance."
                 },
                 {
-                    "parameter": "S"
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print or report the measurement result."
                 }
             ]
         }

@@ -1,67 +1,154 @@
 {
     "id": "P9843",
-    "name": "Angle Measurement",
-    "description": "Measure an angled surface in the X or Y plane.",
+    "name": "Angle measurement",
+    "description": "Measure the angle of a surface in the X or Y plane using two probing points.",
+
     "options": [
         {
             "name": "X axis",
+            "description": "Measure the angle of a surface parallel to the X axis.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "X",
-                        "D"
+                        {
+                            "parameter": "X",
+                            "attribute": "surface_midpoint_x",
+                            "type": "float",
+                            "description": "Mid-point X position of the surface. Selecting X performs an X-axis measurement."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "measurement_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Distance travelled parallel to the X axis between the two probing positions."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
-                    "parameter": "A"
+                    "parameter": "A",
+                    "attribute": "nominal_surface_angle",
+                    "type": "float",
+                    "description": "Nominal surface angle measured from the positive X axis."
                 },
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Allowed angular tolerance."
                 },
                 {
-                    "parameter": "Q"
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the measurement results."
                 },
                 {
-                    "parameter": "Z"
+                    "parameter": "Z",
+                    "attribute": "measurement_height",
+                    "type": "float",
+                    "description": "Absolute Z position used for pre-positioning before each measurement."
                 }
             ],
-            "match": []
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "surface_angle_x"
+                }
+            ]
         },
+
         {
             "name": "Y axis",
+            "description": "Measure the angle of a surface parallel to the Y axis.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "Y",
-                        "D"
+                        {
+                            "parameter": "Y",
+                            "attribute": "surface_midpoint_y",
+                            "type": "float",
+                            "description": "Mid-point Y position of the surface. Selecting Y performs a Y-axis measurement."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "measurement_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Distance travelled parallel to the Y axis between the two probing positions."
+                        }
                     ]
                 }
             ],
+
             "optional_parameters": [
                 {
-                    "parameter": "A"
+                    "parameter": "A",
+                    "attribute": "nominal_surface_angle",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Nominal surface angle measured from the positive X axis."
                 },
                 {
-                    "parameter": "B"
+                    "parameter": "B",
+                    "attribute": "angle_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Allowed angular tolerance."
                 },
                 {
-                    "parameter": "Q"
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
                 },
                 {
-                    "parameter": "W"
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the measurement results."
                 },
                 {
-                    "parameter": "Z"
+                    "parameter": "Z",
+                    "attribute": "measurement_height",
+                    "type": "float",
+                    "description": "Absolute Z position used for pre-positioning before each measurement."
                 }
             ],
-            "match": []
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "surface_angle_y"
+                }
+            ]
         }
     ]
 }

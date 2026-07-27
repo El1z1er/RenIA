@@ -1,8 +1,0 @@
-{
-    "id": "E",
-    "name": "E parameter",
-    "description": "Depends on routine",
-    "type": "integer",
-    "unit": "mm",
-    "minimum": 0
-}

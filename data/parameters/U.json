@@ -1,8 +1,0 @@
-{
-    "id": "U",
-    "name": "U parameter",
-    "description": "Depends on routine",
-    "type": "float",
-    "unit": "mm",
-    "minimum": 0
-}

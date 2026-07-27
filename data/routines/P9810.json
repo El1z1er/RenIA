@@ -1,44 +1,87 @@
 {
     "id": "P9810",
     "name": "Protected Positioning",
-    "description": "Probe trigger monitoring",
+    "description": "Move the probe to a target position while monitoring for probe trigger events to prevent collisions.",
+
     "requirements": [
         {
-            "rule": "one_or_more",
+            "rule": "at_least_one",
             "parameters": [
-                "X",
-                "Y",
-                "Z"
+                {
+                    "parameter": "X",
+                    "attribute": "target_x",
+                    "type": "float",
+                    "description": "Target X-axis position."
+                },
+                {
+                    "parameter": "Y",
+                    "attribute": "target_y",
+                    "type": "float",
+                    "description": "Target Y-axis position."
+                },
+                {
+                    "parameter": "Z",
+                    "attribute": "target_z",
+                    "type": "float",
+                    "description": "Target Z-axis position."
+                }
             ]
-        },
-        {
-            "rule": "required",
-            "parameters": [
-                "F"
-            ],
-            "minimum": null,
-            "maximum": null
         }
     ],
+
     "optional_parameters": [
         {
+            "parameter": "F",
+            "attribute": "feedrate",
+            "type": "float",
+            "minimum": 0,
+            "description": "Protected positioning feedrate. When omitted, the optimized feedrate calculated by SupaTouch is used."
+        },
+        {
             "parameter": "M",
+            "attribute": "collision_response",
+            "type": "integer",
             "allowed_values": [
                 1,
                 2
-            ]
+            ],
+            "description": "Defines how the cycle behaves after a probe trigger.",
+            "values": {
+                "1": "Set probe trigger flag (#148) and stop at the trigger position.",
+                "2": "Set probe trigger flag (#148) and automatically return to the starting position."
+            }
         },
         {
             "parameter": "C",
+            "attribute": "position_reference",
+            "type": "integer",
             "allowed_values": [
                 1
-            ]
+            ],
+            "description": "Position using the stylus ball centre instead of the stylus tip."
         }
     ],
+
     "match": [
         {
             "action": "position",
             "target": "probe"
+        },
+        {
+            "action": "move",
+            "target": "probe"
+        },
+        {
+            "action": "protect",
+            "target": "probe"
+        },
+        {
+            "action": "detect_collision",
+            "target": "probe"
+        },
+        {
+            "action": "detect_misload",
+            "target": "workpiece"
         }
     ]
 }

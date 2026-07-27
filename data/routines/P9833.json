@@ -1,16 +1,25 @@
 {
     "id": "P9833",
-    "name": "Probe Stop",
+    "name": "Probe stop",
     "description": "Switch the probe off and optionally close the print port.",
+
     "requirements": [],
+
     "optional_parameters": [
         {
-            "parameter": "W"
+            "parameter": "W",
+            "attribute": "print_flag",
+            "type": "integer",
+            "allowed_values": [
+                1
+            ],
+            "description": "Closes the print port (PCLOS) after printing has completed. Used together with the P9832 W1 input."
         }
     ],
+
     "match": [
         {
-            "action": "stop_probe",
+            "action": "stop",
             "target": "probe"
         }
     ]

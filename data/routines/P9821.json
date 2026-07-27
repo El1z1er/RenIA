@@ -1,73 +1,268 @@
 {
     "id": "P9821",
     "name": "Angled surface",
-    "description": "Angled surface measurement.",
+    "description": "Measure an angled surface using either the angle and radial distance or target coordinates.",
+
     "options": [
         {
             "name": "Using A and D inputs",
+            "description": "Measures an angled surface using the nominal angle and radial distance.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "A",
-                        "D"
+                        {
+                            "parameter": "A",
+                            "attribute": "measurement_angle",
+                            "type": "float",
+                            "description": "Direction of the probe measurement from the positive X axis."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "surface_distance",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal radial distance to the surface."
+                        }
                     ]
                 }
             ],
-            "match": []
-        },
-        {
-            "name": "Using X, Y, Z inputs",
-            "requirements": [
+
+            "optional_parameters": [
                 {
-                    "rule": "all",
-                    "parameters": [
-                        "X",
-                        "Y",
-                        "Z"
-                    ]
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
+                },
+                {
+                    "parameter": "F",
+                    "attribute": "feedrate",
+                    "type": "float",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Percentage feedrate used when updating a tool offset."
+                },
+                {
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance of the measured feature."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
+                },
+                {
+                    "parameter": "V",
+                    "attribute": "null_band",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Tolerance band in which no tool offset adjustment occurs."
+                },
+                {
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
                 }
             ],
-            "match": []
-        }
-    ],
-    "optional_parameters": [
-        {
-            "parameter": "C",
-            "allowed_values": [
-                1,
-                2
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "angled_surface"
+                },
+                {
+                    "action": "update",
+                    "target": "angled_surface"
+                }
             ]
         },
+
         {
-            "parameter": "E"
-        },
-        {
-            "parameter": "F"
-        },
-        {
-            "parameter": "H"
-        },
-        {
-            "parameter": "M"
-        },
-        {
-            "parameter": "Q"
-        },
-        {
-            "parameter": "S"
-        },
-        {
-            "parameter": "T"
-        },
-        {
-            "parameter": "U"
-        },
-        {
-            "parameter": "V"
-        },
-        {
-            "parameter": "W"
+            "name": "Using X, Y and Z inputs",
+            "description": "Measures an angled surface using vector coordinates.",
+
+            "requirements": [
+                {
+                    "rule": "all",
+                    "parameters": [
+                        {
+                            "parameter": "X",
+                            "attribute": "x_target_position",
+                            "type": "float",
+                            "description": "X-axis target position."
+                        },
+                        {
+                            "parameter": "Y",
+                            "attribute": "y_target_position",
+                            "type": "float",
+                            "description": "Y-axis target position."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "z_target_position",
+                            "type": "float",
+                            "description": "Z-axis target position."
+                        }
+                    ]
+                }
+            ],
+
+            "optional_parameters": [
+                {
+                    "parameter": "C",
+                    "attribute": "output_mode",
+                    "type": "integer",
+                    "allowed_values": [
+                        1,
+                        2
+                    ],
+                    "description": "Defines whether the reported position is the stylus centre (C1) or the surface position (C2)."
+                },
+                {
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
+                },
+                {
+                    "parameter": "F",
+                    "attribute": "feedback_percentage",
+                    "type": "float",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Percentage feedback used when updating a tool offset."
+                },
+                {
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance of the measured feature."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
+                },
+                {
+                    "parameter": "V",
+                    "attribute": "null_band",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Tolerance band in which no tool offset adjustment occurs."
+                },
+                {
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
+                }
+            ],
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "angled_surface"
+                }
+            ]
         }
     ]
 }

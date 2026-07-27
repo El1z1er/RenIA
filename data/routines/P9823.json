@@ -1,73 +1,299 @@
 {
     "id": "P9823",
-    "name": "3 Point Bore or boss",
-    "description": "3 Point bore or boss measurement.",
+    "name": "3-point bore or boss",
+    "description": "Measure a bore or boss using three vectored measuring moves along the XY axes.",
+
     "options": [
         {
             "name": "Bore",
+            "description": "Measure an internal bore. Omitting the Z input automatically selects the bore cycle.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "A",
-                        "B",
-                        "C",
-                        "D"
+                        {
+                            "parameter": "A",
+                            "attribute": "first_measurement_angle",
+                            "type": "float",
+                            "description": "First vector measurement angle measured from the positive X-axis."
+                        },
+                        {
+                            "parameter": "B",
+                            "attribute": "second_measurement_angle",
+                            "type": "float",
+                            "description": "Second vector measurement angle measured from the positive X-axis."
+                        },
+                        {
+                            "parameter": "C",
+                            "attribute": "third_measurement_angle",
+                            "type": "float",
+                            "description": "Third vector measurement angle measured from the positive X-axis."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "feature_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal diameter of the bore."
+                        }
                     ]
                 }
             ],
-            "match": []
+
+            "optional_parameters": [
+                {
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
+                },
+                {
+                    "parameter": "F",
+                    "attribute": "feedback_percentage",
+                    "type": "float",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Feedback percentage used when updating a tool offset."
+                },
+                {
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance of the measured feature."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
+                },
+                {
+                    "parameter": "R",
+                    "attribute": "radial_clearance",
+                    "type": "float",
+                    "description": "Radial clearance used to pre-position before each measurement."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
+                },
+                {
+                    "parameter": "V",
+                    "attribute": "null_band",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Tolerance zone where no tool offset correction occurs."
+                },
+                {
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
+                }
+            ],
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "bore"
+                },
+                {
+                    "action": "update",
+                    "target": "bore"
+                }
+            ]
         },
+
         {
             "name": "Boss",
+            "description": "Measure an external boss. Supplying the Z input selects the boss cycle.",
+
             "requirements": [
                 {
                     "rule": "all",
                     "parameters": [
-                        "A",
-                        "B",
-                        "C",
-                        "D",
-                        "Z"
+                        {
+                            "parameter": "A",
+                            "attribute": "first_measurement_angle",
+                            "type": "float",
+                            "description": "First vector measurement angle measured from the positive X-axis."
+                        },
+                        {
+                            "parameter": "B",
+                            "attribute": "second_measurement_angle",
+                            "type": "float",
+                            "description": "Second vector measurement angle measured from the positive X-axis."
+                        },
+                        {
+                            "parameter": "C",
+                            "attribute": "third_measurement_angle",
+                            "type": "float",
+                            "description": "Third vector measurement angle measured from the positive X-axis."
+                        },
+                        {
+                            "parameter": "D",
+                            "attribute": "feature_diameter",
+                            "type": "float",
+                            "minimum": 0,
+                            "description": "Nominal diameter of the boss."
+                        },
+                        {
+                            "parameter": "Z",
+                            "attribute": "measurement_height",
+                            "type": "float",
+                            "description": "Absolute Z-axis position. Presence of this parameter selects the boss cycle."
+                        }
                     ]
                 }
             ],
-            "match": []
-        }
-    ],
-    "optional_parameters": [
-        {
-            "parameter": "E"
-        },
-        {
-            "parameter": "F"
-        },
-        {
-            "parameter": "H"
-        },
-        {
-            "parameter": "M"
-        },
-        {
-            "parameter": "Q"
-        },
-        {
-            "parameter": "R"
-        },
-        {
-            "parameter": "S"
-        },
-        {
-            "parameter": "T"
-        },
-        {
-            "parameter": "U"
-        },
-        {
-            "parameter": "V"
-        },
-        {
-            "parameter": "W"
+
+            "optional_parameters": [
+                {
+                    "parameter": "E",
+                    "attribute": "experience_value",
+                    "type": "integer",
+                    "description": "Tool offset experience value."
+                },
+                {
+                    "parameter": "F",
+                    "attribute": "feedback_percentage",
+                    "type": "float",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Feedback percentage used when updating a tool offset."
+                },
+                {
+                    "parameter": "H",
+                    "attribute": "tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Nominal tolerance of the measured feature."
+                },
+                {
+                    "parameter": "M",
+                    "attribute": "true_position_tolerance",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "True position tolerance."
+                },
+                {
+                    "parameter": "Q",
+                    "attribute": "probe_overtravel",
+                    "type": "float",
+                    "minimum": 0,
+                    "description": "Probe overtravel distance."
+                },
+                {
+                    "parameter": "R",
+                    "attribute": "radial_clearance",
+                    "type": "float",
+                    "description": "Radial clearance used to pre-position before each measurement."
+                },
+                {
+                    "parameter": "S",
+                    "attribute": "work_offset",
+                    "type": "integer",
+                    "allowed_ranges": [
+                        {
+                            "minimum": 0,
+                            "maximum": 6
+                        },
+                        {
+                            "minimum": 53,
+                            "maximum": 59
+                        },
+                        {
+                            "minimum": 101,
+                            "maximum": 400
+                        }
+                    ],
+                    "description": "Work offset to update."
+                },
+                {
+                    "parameter": "T",
+                    "attribute": "tool_offset",
+                    "type": "integer",
+                    "description": "Tool offset to update."
+                },
+                {
+                    "parameter": "U",
+                    "attribute": "upper_tolerance_limit",
+                    "type": "float",
+                    "description": "Upper tolerance limit."
+                },
+                {
+                    "parameter": "V",
+                    "attribute": "null_band",
+                    "type": "float",
+                    "default": 0,
+                    "description": "Tolerance zone where no tool offset correction occurs."
+                },
+                {
+                    "parameter": "W",
+                    "attribute": "print_output",
+                    "type": "float",
+                    "allowed_values": [
+                        1,
+                        2,
+                        1.1
+                    ],
+                    "description": "Print the output data."
+                }
+            ],
+
+            "match": [
+                {
+                    "action": "measure",
+                    "target": "boss"
+                },
+                {
+                    "action": "update",
+                    "target": "boss"
+                }
+            ]
         }
     ]
 }
